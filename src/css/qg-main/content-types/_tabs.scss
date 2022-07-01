@@ -1,0 +1,72 @@
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+#qg-tabbed-area{
+  .qg-tabs {
+    display: none;
+  }
+
+  input[id^="tab"] {
+    display: none;
+  }
+
+  label {
+    margin-right: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+    text-align: center;
+
+  }
+  label:hover {
+    color: #888;
+    cursor: pointer;
+  }
+  .fb_iframe_widget {
+    z-index: 99;
+  }
+  #tab1:checked ~ #tab-1,
+  #tab2:checked ~ #tab-2,
+  #tab3:checked ~ #tab-3{
+    display: block;
+  }
+  &.alerts-theme{
+    input[id^="tab"]:checked + label{
+      color: #fff;
+      background: #000000;
+    }
+    label{
+      background: #efedee;
+      color: #283966;
+      padding: 0.7em 1.3em;
+      text-decoration: none;
+      margin-right: 0;
+      &:hover {
+        color: #fff;
+        background: #000000;
+      }
+    }
+  }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  #qg-tabbed-area{
+    &.alerts-theme {
+      label {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #qg-tabbed-area{
+    width: 900px;
+  }
+}
